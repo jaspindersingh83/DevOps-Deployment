@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: litchi891983 # You'll need to manually type this out. The environment variable won't work
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels: # labels to select/identify the deployment
+        app: litchi891983
+    spec:     # pod spec                  
+      containers: 
+      - name: litchi891983
+        image: gcr.io/litchi891983/lambda-backend-devops:v1  # image we pushed
+        ports:
+        - containerPort: 8080
